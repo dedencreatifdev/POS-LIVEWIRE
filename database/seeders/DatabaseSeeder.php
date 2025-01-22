@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         $menus_transaksi->relsubmenu()->create([
             'nama_menu'     => 'Tambah Pesanan',
             // 'icon'          => '',
-            'route'         => $menus_transaksi->nama_menu.'.List',
+            'route'         => $menus_transaksi->nama_menu.'.Index',
         ]);
         $menus_transaksi->relsubmenu()->create([
             'nama_menu'     => 'Pesanan List',
@@ -96,12 +96,18 @@ class DatabaseSeeder extends Seeder
             'route'         => $menus_transaksi->nama_menu.'.List',
         ]);
 
-
-        $menus_transaksi = $header_transaksi->relmenu()->create([
+// Menu Penjualan
+        $menus_penjualan = $header_transaksi->relmenu()->create([
             'nama_menu'     => 'Penjualan',
             'icon'          => 'fa-cart-arrow-down',
-            'route'         => 'Penjualan.List',
+            // 'route'         => 'Penjualan.List',
         ]);
+        $menus_penjualan->relsubmenu()->create([
+            'nama_menu'     => 'Penjualan List',
+            // 'icon'          => '',
+            'route'         => $menus_penjualan->nama_menu.'.List',
+        ]);
+
         $menus_transaksi = $header_transaksi->relmenu()->create([
             'nama_menu'     => 'Pembelian',
             'icon'          => 'fa-cart-plus',
@@ -116,6 +122,11 @@ class DatabaseSeeder extends Seeder
             'nama_menu'     => 'Mutasi Stok',
             // 'icon'          => '',
             'route'         => 'MutasiStok.List',
+        ]);
+        $menus_transaksi = $header_transaksi->relmenu()->create([
+            'nama_menu'     => 'Opname Stok',
+            // 'icon'          => '',
+            'route'         => 'Opname.List',
         ]);
 
         // SUBMENU //

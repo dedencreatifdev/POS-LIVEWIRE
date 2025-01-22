@@ -29,9 +29,39 @@
                         <li class="nav-header">{{ $header->nama_menu }}</li>
                         @foreach ($header->relmenu as $menu)
                             @if ($menu->relsubmenu->count())
-                                asa
+                                <li
+                                    class="nav-item {{ request()->routeis($menu->nama_menu . '*') ? 'menu-open' : '' }}">
+                                    <a href="#"
+                                        class="nav-link {{ request()->routeis($menu->nama_menu . '*') ? 'active' : '' }}">
+                                        <i class="nav-icon fas  {{ $menu->icon }}"></i>
+                                        <p>
+                                            {{ $menu->nama_menu }}
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        @foreach ($menu->relsubmenu as $submenu)
+                                            <li class="nav-item">
+                                                <a wire:navigate href="{{ route($submenu->route) }}"
+                                                    class="nav-link  {{ request()->routeis($submenu->route) ? 'active' : '' }}">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>{{ $submenu->nama_menu }}</p>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                             @else
-                                asi
+                                <li class="nav-item">
+                                    <a wire:navigate href="{{ route($menu->route) ?? '/' }}"
+                                        class="nav-link {{ request()->routeis($menu->route) ? 'active' : '' }}">
+                                        <i class="nav-icon fas {{ $menu->icon ?? 'fa-th' }}"></i>
+                                        <p>
+                                            {{ $menu->nama_menu }}
+                                            <span class="right badge badge-danger">New</span>
+                                        </p>
+                                    </a>
+                                </li>
                             @endif
                         @endforeach
                     @endforeach
