@@ -9,17 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    
+
     public function up(): void
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->uuid('id');
 
             $table->string('nama_menu', 100);
-            $table->string('icon', 100);
-            $table->string('route', 100);
-            $table->string('header_id', 100)->nullable();
-            $table->string('parent_id', 100)->nullable();
+            $table->string('icon', 100)->nullable();
+            $table->string('route', 100)->nullable();
+            // $table->string('header_id', 100)->nullable();
+            $table->string('menu_id', 100)->nullable();
+            $table->string('submenu_id', 100)->nullable();
 
             $table->timestamps();
         });
