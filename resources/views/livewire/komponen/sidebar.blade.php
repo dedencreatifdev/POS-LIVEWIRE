@@ -58,8 +58,9 @@
 
                                     </ul>
                                 </li>
-                            @else
-                                <li
+                            @endforeach
+                        @else
+                            {{-- <li
                                     class="nav-item {{ request()->routeis('' . explode('.', $menu->route)[0] . '*') ? 'menu-open' : '' }}">
                                     <a wire:navigate
                                         {{ $menu->route == null ? 'href=' . route('Dashboard.Index') . '' : 'href=' . route('' . $menu->route . '') . '' }}
@@ -69,8 +70,7 @@
                                             {{ $menu->nama_menu }}
                                         </p>
                                     </a>
-                                </li>
-                            @endforeach
+                                </li> --}}
                         @endif
                     @endforeach
                 </ul>
