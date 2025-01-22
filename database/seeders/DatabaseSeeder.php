@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         $menus_dashboard = $header_home->relmenu()->create([
             'nama_menu'     => 'Dashboard',
             'icon'          => 'fa-tachometer-alt',
-            'route'         => 'Dashboard',
+            // 'route'         => 'Dashboard.Index',
         ]);
         $menus_dashboard->relsubmenu()->create([
             'nama_menu'     => 'CRM',
@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
         $menus_produk = $header_produk->relmenu()->create([
             'nama_menu'     => 'Produk',
             'icon'          => 'fa-th',
-            'route'         => 'Produk',
+            // 'route'         => 'Produk.List',
         ]);
         $menus_produk->relsubmenu()->create([
             'nama_menu'     => 'Tambah Produk',
@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
         $menus_transaksi = $header_transaksi->relmenu()->create([
             'nama_menu'     => 'Pesanan',
             'icon'          => 'fa-envelope',
-            'route'         => 'Pesanan',
+            // 'route'         => 'Pesanan.List',
         ]);
         $menus_transaksi->relsubmenu()->create([
             'nama_menu'     => 'Tambah Pesanan',

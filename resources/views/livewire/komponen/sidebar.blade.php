@@ -25,53 +25,15 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
 
-                    @foreach (getHeader() as $item)
-                        <li class="nav-header">{{ $item->nama_menu }}</li>
-
-                        @if ($item->relsubmenu->count())
-                            @foreach ($item->relMenu as $menu)
-                                <li
-                                    class="nav-item {{ request()->routeis('' . explode('.', $menu->route)[0] . '*') ? 'menu-open' : '' }}">
-                                    <a href="#"
-                                        class="nav-link {{ request()->routeis('' . explode('.', $menu->route)[0] . '*') ? 'active' : '' }}">
-                                        <i class="nav-icon fas {{ $menu->icon ?? 'fa-th' }}"></i>
-                                        <p>
-                                            {{ $menu->nama_menu }}
-
-                                            @if ($menu->relSubMenu->count())
-                                                <i class="right fas fa-angle-left"></i>
-                                            @endif
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-
-                                        @foreach ($menu->relSubMenu as $submenu)
-                                            <li class="nav-item">
-                                                <a wire:navigate
-                                                    {{ $submenu->route == null ? 'href=' . route('Dashboard.Index') . '' : 'href=' . route('' . $submenu->route . '') . '' }}
-                                                    class="nav-link {{ request()->routeis('' . $submenu->route . '') ? 'active' : '' }}">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>{{ $submenu->nama_menu }}</p>
-                                                </a>
-                                            </li>
-                                        @endforeach
-
-                                    </ul>
-                                </li>
-                            @endforeach
-                        @else
-                            {{-- <li
-                                    class="nav-item {{ request()->routeis('' . explode('.', $menu->route)[0] . '*') ? 'menu-open' : '' }}">
-                                    <a wire:navigate
-                                        {{ $menu->route == null ? 'href=' . route('Dashboard.Index') . '' : 'href=' . route('' . $menu->route . '') . '' }}
-                                        class="nav-link {{ request()->routeis('' . explode('.', $menu->route)[0] . '*') ? 'active' : '' }}">
-                                        <i class="nav-icon fas {{ $menu->icon ?? 'fa-th' }}"></i>
-                                        <p>
-                                            {{ $menu->nama_menu }}
-                                        </p>
-                                    </a>
-                                </li> --}}
-                        @endif
+                    @foreach (getHeader() as $header)
+                        <li class="nav-header">{{ $header->nama_menu }}</li>
+                        @foreach ($header->relmenu as $menu)
+                            @if ($menu->relsubmenu->count())
+                                asa
+                            @else
+                                asi
+                            @endif
+                        @endforeach
                     @endforeach
                 </ul>
             </nav>
