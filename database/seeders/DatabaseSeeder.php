@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
         $menus_produk->relsubmenu()->create([
             'nama_menu'     => 'Tambah Produk',
             // 'icon'          => '',
-            'route'         => $menus_produk->nama_menu.'.Index',
+            'route'         => $menus_produk->nama_menu.'.Tambah',
         ]);
         $menus_produk->relsubmenu()->create([
             'nama_menu'     => 'Produk List',

@@ -5,12 +5,12 @@ namespace App\Livewire\Admin\Produk;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Produk List')]
+#[Title('Tambah Produk')]
 
-class ProdukList extends Component
+class ProdukTambah extends Component
 {
     public function render()
     {
-        return view('livewire.admin.produk.produk-list');
+        return view('livewire.admin.produk.produk-tambah');
     }
 }
