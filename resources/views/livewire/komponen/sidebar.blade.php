@@ -24,7 +24,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-
+ 
                     @foreach (getHeader() as $header)
                         <li class="nav-header">{{ $header->nama_menu }}</li>
                         @foreach ($header->relmenu as $menu)
